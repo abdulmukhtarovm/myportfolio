@@ -1,17 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./sass/main.scss"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PortfolioPage from './pages/PortfolioPage';
+import ProfilePage from './pages/ProfilePage';
+import ResumePage from './pages/ResumePage';
+import ContactsPage from './pages/ContactsPage';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  <Router>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <Switch>
+      <Route path="/" exact component={App} />
+      <Route path="/portfolio" exact component={PortfolioPage} />
+      <Route path="/profile" exact component={ProfilePage} />
+      <Route path="/resume" exact component={ResumePage} />
+      <Route path="/contacts" exact component={ContactsPage} />
+    </Switch>
+
+  </Router>
+);
