@@ -45,7 +45,9 @@ const PortfolioPage = () => {
                         </div>
                         <div className="PortfolioPageRight">
                             <Navbar />
-
+                            <div className="main-bg">
+                                    <img src="./img/wall1.png" alt="" />
+                                </div>
                             <Projects />
 
                             <Footer />

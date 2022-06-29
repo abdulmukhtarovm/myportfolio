@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="main-navBar">
             <div className="Navbar">
                 <div className="row align-items-center">
-                    <div className="col-sm-2 col-3">
+                    <div className="col-sm-2 col-3 d-lg-none">
                         <div className="logo">
                             <Link to="/">
                                 <img className='w-100' src="./img/logo.png" alt="" />

@@ -12,8 +12,8 @@ body {
         }
     }
 
-    .flex-md-column {
-        @media (max-width:772px) {
+    .flex-sm-column {
+        @media (max-width:776px) {
             flex-direction: column;
 
         }
@@ -452,11 +452,18 @@ body {
         background: $colorYellow;
 
         .name {
+            padding: 10px 0;
+
             p {
                 font-size: 20px;
                 color: #2B2E34;
                 margin-left: 20px;
                 font-family: 'Philosopher';
+
+                @media (max-width:576px) {
+                    line-height: 20px;
+                    font-size: 16px;
+                }
             }
         }
 
@@ -472,277 +479,290 @@ body {
 
                 }
             }
+
+            @media (max-width:576px) {
+                margin: 0 0 0 20px;
+            }
         }
     }
 
-    .HomePageLeft {
-        background: url(../img/wall1.png) no-repeat;
-        background-size: cover;
-        height: 100vh;
-        position: relative;
+    .app {
+        display: flex;
 
         @media (max-width:772px) {
-            width: 100% !important;
-            height: 50vh !important;
+            flex-direction: column;
         }
 
-        .site-lang {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .HomePageLeft {
+            background: url(../img/wall1.png) no-repeat;
+            background-size: cover;
+            height: 100vh;
+            position: relative;
 
-            select {
-                background: none;
-                padding: 5px 0 10px 10px;
-                color: $colorYellow;
-                font-size: 30px;
-                border: 1px solid $colorYellow;
+            @media (max-width:772px) {
+                width: 100% !important;
+                height: 50vh !important;
+            }
 
-                &:focus {
-                    outline: none;
-                }
+            .site-lang {
+                position: absolute;
+                top: 0;
+                left: 0;
 
-                option {
+                select {
                     background: none;
+                    padding: 5px 0 10px 10px;
                     color: $colorYellow;
-                }
-
-                @media (max-width:776px) { 
-                 font-size: 20px;
-                }
-            }
-        }
-
-        .content {
-            text-align: center;
-
-            .logo {
-                width: 400px;
-                margin: -50px auto !important;
-
-                img {
-                    width: 100%;
-                }
-
-                @media (max-width:772px) {
-                    width: 200px;
-                    //    margin-bottom: 10px !important;
-
-                }
-            }
-
-            h1 {
-                color: #fff;
-                font-size: 73px;
-                font-weight: 700;
-                margin-bottom: 30px;
-                font-family: 'Philosopher', sans-serif;
-
-                span {
-                    color: $colorYellow;
-                }
-
-                @media (max-width:992px) {
-                    font-size: 50px;
-                }
-
-                @media (max-width:776px) {
                     font-size: 30px;
-                    margin: 10px 0 0;
+                    border: 1px solid $colorYellow;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    option {
+                        background: none;
+                        color: $colorYellow;
+                    }
+
+                    @media (max-width:776px) {
+                        font-size: 20px;
+                    }
                 }
             }
 
-            h2 {
-                color: #fff;
-                font-size: 50px;
-                font-weight: 500;
-                border-bottom: 2px solid $colorYellow;
-                display: inline-block;
-                font-family: 'Roboto', sans-serif;
+            .content {
+                text-align: center;
 
-                @media (max-width:992px) {
-                    font-size: 40px;
-                }
+                .logo {
+                    width: 400px;
+                    margin: -50px auto !important;
 
-                @media (max-width:776px) {
-                    font-size: 30px;
-                    margin-top: 10px;
-                }
+                    img {
+                        width: 100%;
+                    }
 
-                @media (max-width:576px) {
-                    font-size: 20px;
-                }
-            }
-
-            .social-media {
-                font-size: 25px;
-                margin-top: 30px;
-
-                li {
-                    position: relative;
-                    margin: 0 10px;
-                    font-size: 30px;
-
-                    a {
-                        color: #fff;
+                    @media (max-width:772px) {
+                        width: 200px;
+                        //    margin-bottom: 10px !important;
 
                     }
+                }
+
+                h1 {
+                    color: #fff;
+                    font-size: 73px;
+                    font-weight: 700;
+                    margin-bottom: 30px;
+                    font-family: 'Philosopher', sans-serif;
 
                     span {
                         color: $colorYellow;
-                        position: absolute;
-                        bottom: -20px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        font-size: 15px;
-                        opacity: 0;
-                        transition: all ease-in-out 0.2s;
                     }
 
-                    &:hover {
+                    @media (max-width:992px) {
+                        font-size: 50px;
+                    }
+
+                    @media (max-width:776px) {
+                        font-size: 30px;
+                        margin: 10px 0 0;
+                    }
+                }
+
+                h2 {
+                    color: #fff;
+                    font-size: 50px;
+                    font-weight: 500;
+                    border-bottom: 2px solid $colorYellow;
+                    display: inline-block;
+                    font-family: 'Roboto', sans-serif;
+
+                    @media (max-width:992px) {
+                        font-size: 40px;
+                    }
+
+                    @media (max-width:776px) {
+                        font-size: 30px;
+                        margin-top: 10px;
+                    }
+
+                    @media (max-width:576px) {
+                        font-size: 20px;
+                    }
+                }
+
+                .social-media {
+                    font-size: 25px;
+                    margin-top: 30px;
+
+                    li {
+                        position: relative;
+                        margin: 0 10px;
+                        font-size: 30px;
+
                         a {
-                            color: $colorYellow;
+                            color: #fff;
 
                         }
 
                         span {
-                            opacity: 1;
+                            color: $colorYellow;
+                            position: absolute;
+                            bottom: -20px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            font-size: 15px;
+                            opacity: 0;
+                            transition: all ease-in-out 0.2s;
+                        }
+
+                        &:hover {
+                            a {
+                                color: $colorYellow;
+
+                            }
+
+                            span {
+                                opacity: 1;
+                            }
                         }
                     }
                 }
             }
+
+
         }
 
+        .HomePageRight {
+            padding: 0;
+            position: relative;
+            width: 50%;
+            height: 100vh;
+            transition: all 1s ease-in-out;
 
-    }
+            @media (max-width:772px) {
+                width: 100% !important;
+                height: 50vh !important;
+            }
 
-    .HomePageRight {
-        padding: 0;
-        position: relative;
-        width: 50%;
-        height: 100vh;
-        transition: all 1s ease-in-out;
+            .menu {
+                height: 100%;
 
-        @media (max-width:772px) {
-            width: 100% !important;
-            height: 50vh !important;
-        }
-
-        .menu {
-            height: 100%;
-
-            .profile-btn,
-            .resume-btn,
-            .portfolio-btn,
-            .contact-btn {
-                width: 100%;
-                height: 25%;
-                overflow: hidden;
-                position: relative;
-                cursor: pointer;
-                align-items: center;
-                display: flex;
-                padding-left: 100px;
-                width: 100%;
-
-                @media (max-width:776px) {
-                    //  width: 80%;
-                    //  margin: 0 auto;
-                    padding: 0 30px;
-                }
-
-                &:hover {
-                    .masking {
-                        transform: scale(3) !important;
-                        opacity: 0;
-                        background: rgba(256, 256, 256, 0.2);
-                    }
-                }
-
-                .heading {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                .profile-btn,
+                .resume-btn,
+                .portfolio-btn,
+                .contact-btn {
+                    width: 100%;
+                    height: 25%;
+                    overflow: hidden;
                     position: relative;
+                    cursor: pointer;
+                    align-items: center;
+                    display: flex;
+                    padding-left: 100px;
+                    width: 100%;
 
-                    .item {
-                        z-index: 2;
-                        background: rgba(256, 256, 256, 0.2);
-                        height: 60px;
-                        width: 60px;
-                        border-radius: 50%;
+                    @media (max-width:776px) {
+                        //  width: 80%;
+                        //  margin: 0 auto;
+                        padding: 0 30px;
+                    }
+
+                    &:hover {
+                        .masking {
+                            transform: scale(3) !important;
+                            opacity: 0;
+                            background: rgba(256, 256, 256, 0.2);
+                        }
+                    }
+
+                    .heading {
                         display: flex;
-                        align-items: center;
                         justify-content: center;
-                        margin-right: 30px;
+                        align-items: center;
+                        position: relative;
 
-                        .icon {
-                            font-size: 25px;
-                            color: #fff;
-                        }
-                        @media (max-width:776px) { 
-                            display: none;
-                        }
-                    }
+                        .item {
+                            z-index: 2;
+                            background: rgba(256, 256, 256, 0.2);
+                            height: 60px;
+                            width: 60px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-right: 30px;
 
-                    .masking {
-                        transition: all 0.3s ease;
-                        content: '';
-                        width: 60px;
-                        height: 60px;
-                        background: rgba(256, 256, 256, 0.2);
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        border-radius: 50%;
-                        z-index: 0;
+                            .icon {
+                                font-size: 25px;
+                                color: #fff;
+                            }
 
-                        @media (max-width:776px) { 
-                            display: none;
-                        }
-                    }
-
-                    .info {
-                        h2 {
-                            color: #fff;
-                            margin: 0;
-                            font-size: 25px;
-                            opacity: 0.9;
-                            font-weight: 500;
-                            font-family: 'Montserrat', sans-serif;
-                            text-transform: uppercase;
-
-                            span {
-                                color: #ffcb02;
+                            @media (max-width:776px) {
+                                display: none;
                             }
                         }
 
-                        h3 {
-                            color: #fff;
-                            margin-top: 5px;
-                            margin-bottom: 0;
-                            font-size: 16px;
-                            opacity: 0.9;
-                            font-family: 'Philosopher', sans-serif;
-                            font-style: italic;
-                            font-weight: 400;
+                        .masking {
+                            transition: all 0.3s ease;
+                            content: '';
+                            width: 60px;
+                            height: 60px;
+                            background: rgba(256, 256, 256, 0.2);
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            border-radius: 50%;
+                            z-index: 0;
+
+                            @media (max-width:776px) {
+                                display: none;
+                            }
+                        }
+
+                        .info {
+                            h2 {
+                                color: #fff;
+                                margin: 0;
+                                font-size: 25px;
+                                opacity: 0.9;
+                                font-weight: 500;
+                                font-family: 'Montserrat', sans-serif;
+                                text-transform: uppercase;
+
+                                span {
+                                    color: #ffcb02;
+                                }
+                            }
+
+                            h3 {
+                                color: #fff;
+                                margin-top: 5px;
+                                margin-bottom: 0;
+                                font-size: 16px;
+                                opacity: 0.9;
+                                font-family: 'Philosopher', sans-serif;
+                                font-style: italic;
+                                font-weight: 400;
+                            }
                         }
                     }
                 }
+
+                .profile-btn,
+                .portfolio-btn {
+                    background: url(../img/wall2.png);
+                }
+
+                .resume-btn,
+                .contact-btn {
+                    background: url(../img/wall3.png);
+                }
             }
 
-            .profile-btn,
-            .portfolio-btn {
-                background: url(../img/wall2.png);
-            }
 
-            .resume-btn,
-            .contact-btn {
-                background: url(../img/wall3.png);
-            }
         }
-
-
     }
 
     .small-heading {
@@ -785,7 +805,7 @@ body {
             @media (max-width:992px) {
                 position: relative !important;
                 width: 100%;
-                height: 600px;
+                height: 500px;
             }
 
             .mask {
@@ -833,9 +853,9 @@ body {
         }
 
         &Right {
-            background: url(../img/wall1.png);
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            // background: url(../img/wall1.png);
+            // background-attachment: fixed;
+            // background-repeat: no-repeat;
             width: 60%;
             position: absolute;
             right: 0;
@@ -849,85 +869,99 @@ body {
 
 
 
-            .history {
-                .info {
-                    @media (max-width:772px) {
-                        margin-top: 30px;
-                    }
+            .aboutMe {
+                .main-bg {
+                    position: fixed;
+                    top: 0;
+                    z-index: -1;
+                    left: 0;
+                    right: 0;
 
-                    h3 {
-                        font-size: 25px;
-                        font-family: 'Montserrat';
-                        line-height: 1;
-                        margin-bottom: 10px;
-                        color: $colorYellow;
-
-                        @media (max-width:576px) {
-                            font-size: 20px;
-
-                        }
-                    }
-
-                    p {
-                        font-family: 'Roboto';
-                        color: #fff;
-                        font-size: 19px;
-
-                        @media (max-width:576px) {
-                            font-size: 16px;
-
-                        }
-                    }
-
-                    p.add-info {
-                        margin-bottom: 20px;
-                    }
-
-                    p.me {
-                        text-indent: 25px;
-                        margin-bottom: 20px;
-                    }
-
-                    p.mom {
-                        text-indent: 25px;
-                        margin-bottom: 20px;
-                    }
-
-                    p.bro {
-                        text-indent: 25px;
-                        margin-bottom: 20px;
-                    }
-
-                    p.dad {
-                        text-indent: 25px;
-                        margin-bottom: 20px;
-                    }
-
-                    .download-btn {
-                        a {
-                            display: block;
-                            padding: 10px 25px;
-                            border: 1px solid #ffcb02;
-                            color: #ffcb02;
-                            transition: all ease-in 0.2s;
-                            font-family: 'Roboto';
-                            text-transform: uppercase;
-                            font-weight: 700;
-                            font-size: 16px;
-
-                            &:hover {
-                                background: #ffcb02;
-                                color: #2B2E34;
-                            }
-
-                            @media (max-width:576px) {
-                                font-size: 12px;
-                                padding: 5px 10px;
-                            }
-                        }
+                    img {
+                        width: 100%;
                     }
                 }
 
+                .history {
+                    .info {
+                        @media (max-width:772px) {
+                            margin-top: 30px;
+                        }
+
+                        h3 {
+                            font-size: 25px;
+                            font-family: 'Montserrat';
+                            line-height: 1;
+                            margin-bottom: 10px;
+                            color: $colorYellow;
+
+                            @media (max-width:576px) {
+                                font-size: 20px;
+
+                            }
+                        }
+
+                        p {
+                            font-family: 'Roboto';
+                            color: #fff;
+                            font-size: 19px;
+
+                            @media (max-width:576px) {
+                                font-size: 16px;
+
+                            }
+                        }
+
+                        p.add-info {
+                            margin-bottom: 20px;
+                        }
+
+                        p.me {
+                            text-indent: 25px;
+                            margin-bottom: 20px;
+                        }
+
+                        p.mom {
+                            text-indent: 25px;
+                            margin-bottom: 20px;
+                        }
+
+                        p.bro {
+                            text-indent: 25px;
+                            margin-bottom: 20px;
+                        }
+
+                        p.dad {
+                            text-indent: 25px;
+                            margin-bottom: 20px;
+                        }
+
+                        .download-btn {
+                            a {
+                                display: block;
+                                padding: 10px 25px;
+                                border: 1px solid #ffcb02;
+                                color: #ffcb02;
+                                transition: all ease-in 0.2s;
+                                font-family: 'Roboto';
+                                text-transform: uppercase;
+                                font-weight: 700;
+                                font-size: 16px;
+
+                                &:hover {
+                                    background: #ffcb02;
+                                    color: #2B2E34;
+                                }
+
+                                @media (max-width:576px) {
+                                    font-size: 12px;
+                                    padding: 5px 10px;
+                                }
+                            }
+                        }
+                    }
+
+                }
             }
 
             .whatcanido {
@@ -1019,6 +1053,7 @@ body {
                 padding: 50px 15px;
                 text-align: center;
 
+
                 .card {
                     h6 {
                         font-size: 25px;
@@ -1065,7 +1100,7 @@ body {
             @media (max-width:992px) {
                 position: relative !important;
                 width: 100%;
-                height: 600px;
+                height: 500px;
             }
 
             .mask {
@@ -1111,9 +1146,9 @@ body {
         }
 
         &Right {
-            background: url(../img/wall1.png);
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            // background: url(../img/wall1.png);
+            // background-attachment: fixed;
+            // background-repeat: no-repeat;
             width: 60%;
             position: absolute;
             right: 0;
@@ -1124,10 +1159,20 @@ body {
                 width: 100%;
                 //    background-size: contain;
             }
+            .main-bg {
+                position: fixed;
+                top: 0;
+                z-index: -1;
+                left: 0;
+                right: 0;
 
+                img {
+                    width: 100%;
+                }
+            }
 
             .Project-blog {
-                margin: 50px 0;
+                padding: 30px 0;
 
                 @media (max-width: 992px) {
                     margin-top: 0 !important;
@@ -1175,6 +1220,8 @@ body {
                     }
 
                     .tab-content {
+                        overflow: hidden;
+
                         .cards {
                             position: relative;
                             overflow: hidden;
@@ -1276,7 +1323,7 @@ body {
             @media (max-width:992px) {
                 position: relative !important;
                 width: 100%;
-                height: 600px;
+                height: 500px;
             }
 
             .mask {
@@ -1322,9 +1369,9 @@ body {
         }
 
         &Right {
-            background: url(../img/wall1.png);
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            // background: url(../img/wall1.png);
+            // background-attachment: fixed;
+            // background-repeat: no-repeat;
             width: 60%;
             position: absolute;
             right: 0;
@@ -1337,9 +1384,19 @@ body {
             }
 
             .education {
-                background: url(../img/wall1.png);
+                // background: url(../img/wall1.png);
 
+                .main-bg {
+                    position: fixed;
+                    top: 0;
+                    z-index: -1;
+                    left: 0;
+                    right: 0;
 
+                    img {
+                        width: 100%;
+                    }
+                }
                 .edu-content {
                     position: relative;
                     margin-bottom: 50px;
@@ -1510,7 +1567,7 @@ body {
             }
 
             .clearfix {
-                background: url(../img/wall1.png);
+                // background: url(../img/wall1.png);
 
                 .small-heading {
                     margin: 0;
@@ -1574,7 +1631,7 @@ body {
             @media (max-width:992px) {
                 position: relative !important;
                 width: 100%;
-                height: 600px;
+                height: 500px;
             }
 
             .mask {
@@ -1620,13 +1677,25 @@ body {
         }
 
         &Right {
-            background: url(../img/wall1.png);
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            // background: url(../img/wall1.png);
+            // background-attachment: fixed;
+            // background-repeat: no-repeat;
             width: 60%;
             position: absolute;
             right: 0;
             background-position-x: right;
+
+            .main-bg {
+                position: fixed;
+                top: 0;
+                z-index: -1;
+                left: 0;
+                right: 0;
+
+                img {
+                    width: 100%;
+                }
+            }
 
             @media (max-width:992px) {
                 position: relative !important;
@@ -1707,6 +1776,11 @@ body {
                     z-index: 3;
                     position: relative;
                     overflow: hidden;
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: none;
+                    }
 
                     @media (max-width:576px) {
                         font-size: 14px;

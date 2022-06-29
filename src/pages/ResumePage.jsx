@@ -42,6 +42,11 @@ const ResumePage = () => {
                         <div className="ResumePageRight">
                             <Navbar />
                             <div className="education row justify-content-center">
+
+                                <div className="main-bg">
+                                    <img src="./img/wall1.png" alt="" />
+                                </div>
+
                                 <div className="text-center">
                                     <h2 className="small-heading">{getText('education')}</h2>
                                 </div>
@@ -113,7 +118,7 @@ const ResumePage = () => {
                                         <div className="info">
                                             <h3>{getText("znaniy")}</h3>
                                             <p>
-                                               {getText("znaniyP")}
+                                                {getText("znaniyP")}
                                             </p>
                                         </div>
                                     </div>
@@ -145,7 +150,9 @@ const ResumePage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="clearfix">
+                          <div className="clearfix">
+               
+
                                 <div className="text-center">
                                     <h2 className="small-heading">{getText("skills")}</h2>
                                 </div>

@@ -9,15 +9,55 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { getText } from '../locales';
+import axios from 'axios';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactsPage = () => {
+
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 1400);
   }, []);
+
+  const [name, setName] = useState('')
+  const [phone_number, setPhone_number] = useState('')
+  const [message, setMessage] = useState('')
+  const [setAfter] = useState(false)
+
+  const sendMessage = (e) => {
+    e.preventDefault()
+    axios.post("https://muhammadumar.uz/bot/api/", { name, phone_number, message })
+      .then((res) => {
+        // toast.success('Success');
+        setName("")
+        setPhone_number("")
+        setMessage("")
+        setTimeout(() => {
+          setAfter(false)
+        }, 3000)
+        notify()
+      })
+      .catch((err) => {
+        toast.error('Ошибка! Проверьте подключение к интернету')
+      })
+  }
+
+  const notify = () => toast.success('Success!', {
+    position: "top-left",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark"
+  });
+
+
   return (
     <>
       {
@@ -43,30 +83,35 @@ const ContactsPage = () => {
             </div>
             <div className="ContactsPageRight">
               <Navbar />
+              
+              <div className="main-bg">
+                <img src="./img/wall1.png" alt="" />
+              </div>
 
               <div className="row">
                 <div className="col-12">
-                  <h2 className="small-heading">{getText("sayhello")}</h2>
-
-                  
+                  <h2 className="small-heading text-center">{getText("sayhello")}</h2>
 
 
-                  <form action="" className="contact-form">
+
+
+                  <form onSubmit={sendMessage} className="contact-form">
                     <div className="position-relative wrap">
-                      <input type="text" className='form-control' placeholder=' ' id="name" />
+                      <input onChange={e => setName(e.target.value)} value={name} required name="name" type="text" className='form-control' placeholder=' ' id="name" />
                       <label className='contact-label'>{getText("contactName")}<span>*</span></label>
                     </div>
                     <div className="position-relative wrap">
-                      <input type="tel" className='form-control' placeholder=' ' id="tel" />
+                      <input onChange={e => setPhone_number(e.target.value)} value={phone_number} required name="phone_number" type="tel" className='form-control' placeholder=' ' id="tel" />
                       <label className='contact-label'>{getText("phoneNum")}<span>*</span></label>
                     </div>
                     <div className="position-relative wrap">
-                      <textarea className='form-control' placeholder=' ' id="message"></textarea>
+                      <textarea onChange={e => setMessage(e.target.value)} value={message} required name="message" className='form-control' placeholder=' ' id="message"></textarea>
                       <label className='contact-label'>{getText("contactMsg")}<span>*</span></label>
                     </div>
-                    <button className=" btn send-btn">
-                    {getText("send")}
+                    <button type='submit' className="btn send-btn">
+                      {getText("send")}
                     </button>
+                    <ToastContainer />
                   </form>
 
 
@@ -164,12 +209,12 @@ const ContactsPage = () => {
 
 
 
-                  <div className="contact-info">
+                  <div className="contact-info text-center">
                     <h2 className="small-heading">{getText("contactInfo")}</h2>
                     <div className="row">
                       <div className="col-md-4 col-6">
                         <div className="bord">
-                          <a href="tel:+998999992727">
+                          <a target='blank' href="tel:+998999992727">
                             <div className="icon">
                               <FontAwesomeIcon className='phone-icon' icon={faPhone}></FontAwesomeIcon>
                             </div>
@@ -179,7 +224,7 @@ const ContactsPage = () => {
                       </div>
                       <div className="col-md-4 col-6">
                         <div className="bord">
-                          <a href="mailto:abdulmukxtarovm@gmail.com">
+                          <a target='blank' href="mailto:abdulmukxtarovm@gmail.com">
                             <div className="icon">
                               <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
                             </div>
@@ -189,7 +234,7 @@ const ContactsPage = () => {
                       </div>
                       <div className="col-md-4 col-6">
                         <div className="bord">
-                          <a href="https://t.me/abdulmukhtarov_m">
+                          <a target='blank' href="https://t.me/abdulmukhtarov_m">
                             <div className="icon">
                               <FontAwesomeIcon icon={faTelegramPlane}></FontAwesomeIcon>
                             </div>
@@ -199,7 +244,7 @@ const ContactsPage = () => {
                       </div>
                       <div className="col-md-4 col-6">
                         <div className="bord">
-                          <a href="https://instagram.com/abdulmukhtarov_m/">
+                          <a target='blank' href="https://instagram.com/abdulmukhtarov_m/">
                             <div className="icon">
                               <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
                             </div>
@@ -211,7 +256,7 @@ const ContactsPage = () => {
                       </div>
                       <div className="col-md-4 col-6">
                         <div className="bord">
-                          <a href="https://www.facebook.com/abdulmukhtarovm">
+                          <a target='blank' href="https://www.facebook.com/abdulmukhtarovm">
                             <div className="icon">
                               <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
                             </div>
@@ -223,7 +268,7 @@ const ContactsPage = () => {
                       </div>
                       <div className="col-md-4 col-6">
                         <div className="bord">
-                          <a href="https://twitter.com/abdulmukhtarovm">
+                          <a target='blank' href="https://twitter.com/abdulmukhtarovm">
                             <div className="icon">
                               <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
                             </div>
@@ -235,7 +280,7 @@ const ContactsPage = () => {
                       </div>
                       <div className="col-md-4 col-6">
                         <div className="bord">
-                          <a href="https://github.com/abdulmukhtarovm">
+                          <a target='blank' href="https://github.com/abdulmukhtarovm">
                             <div className="icon">
                               <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
                             </div>
@@ -247,7 +292,7 @@ const ContactsPage = () => {
                       </div>
                       <div className="col-md-4 col-6">
                         <div className="bord">
-                          <a href="www.linkedin.com/in/abdulmukhtarovm">
+                          <a target='blank' href="https://linkedin.com/in/abdulmukhtarovm">
                             <div className="icon">
                               <FontAwesomeIcon icon={faLinkedinIn}></FontAwesomeIcon>
                             </div>
@@ -259,7 +304,7 @@ const ContactsPage = () => {
                       </div>
                       <div className="col-md-4 col-6">
                         <div className="bord">
-                          <a href="abdulmukhtarov@icloud.com">
+                          <a target='blank' href="mailto:abdulmukhtarov@icloud.com">
                             <div className="icon">
                               <FontAwesomeIcon icon={faApple}></FontAwesomeIcon>
                             </div>

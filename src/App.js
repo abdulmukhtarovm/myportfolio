@@ -27,7 +27,7 @@ const App = () => {
             </div>
           </>
           :
-          <div className="d-flex flex-md-column">
+          <div className="app">
             <HomePageLeft />
             <HomePageRight />
           </div>

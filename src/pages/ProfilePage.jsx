@@ -38,8 +38,11 @@ const ProfilePage = () => {
                         <div className="ProfilePageRight">
 
                             <Navbar />
-                            
+
                             <div className="aboutMe">
+                                <div className="main-bg">
+                                    <img src="./img/wall1.png" alt="" />
+                                </div>
                                 <div className="text-center">
                                     <h2 className="small-heading">{getText("istoriyaslavy")}</h2>
                                 </div>
@@ -51,21 +54,21 @@ const ProfilePage = () => {
                                         <div className="info col-md-7 col-11">
                                             <h3>{getText("uniqueweb")}</h3>
                                             <p className="me">
-                                            {getText("aboutP1")}
+                                                {getText("aboutP1")}
                                             </p>
 
                                             <p className="add-info">{getText("dopinfo")} </p>
 
                                             <p className="mom">
-                                            {getText("mominfo")}
+                                                {getText("mominfo")}
                                             </p>
 
                                             <p className="dad">
-                                            {getText("dadinfo")}
+                                                {getText("dadinfo")}
                                             </p>
 
                                             <p className="bro">
-                                            {getText("broinfo")}
+                                                {getText("broinfo")}
                                             </p>
                                             <div className="btn download-btn">
                                                 <a download href="../Abdulmukhtarov's  Resume _ Portfolio.pdf">{getText("downloadresume")}</a>
@@ -88,7 +91,7 @@ const ProfilePage = () => {
                                             </div>
                                             <h3>{getText("frontverstka")}</h3>
                                             <p>
-                                            {getText("frontverstkaP")}
+                                                {getText("frontverstkaP")}
                                             </p>
                                         </div>
                                     </div>
@@ -100,7 +103,7 @@ const ProfilePage = () => {
                                             </div>
                                             <h3>{getText("rabotamaket")}</h3>
                                             <p>
-                                            {getText("rabotamaketP")}
+                                                {getText("rabotamaketP")}
                                             </p>
                                         </div>
                                     </div>
@@ -124,7 +127,7 @@ const ProfilePage = () => {
                                             </div>
                                             <h3>{getText("ideas")}</h3>
                                             <p>
-                                            {getText("ideasP")}
+                                                {getText("ideasP")}
                                             </p>
                                         </div>
                                     </div>
@@ -136,7 +139,7 @@ const ProfilePage = () => {
                                             </div>
                                             <h3>{getText("smmhelp")}</h3>
                                             <p>
-                                            {getText("smmhelpP")}
+                                                {getText("smmhelpP")}
                                             </p>
                                         </div>
                                     </div>
