@@ -3,6 +3,7 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react'
+import InputMask from "react-input-mask";
 
 
 // import { Link } from 'react-router-dom';
@@ -26,9 +27,11 @@ const ContactsPage = () => {
   const [name, setName] = useState('')
   const [phone_number, setPhone_number] = useState('')
   const [message, setMessage] = useState('')
-  const [setAfter] = useState(false)
+  const [load, setLoad] = useState(false)
+
 
   const sendMessage = (e) => {
+    setLoad(true)
     e.preventDefault()
     axios.post("https://muhammadumar.uz/bot/api/", { name, phone_number, message })
       .then((res) => {
@@ -36,14 +39,22 @@ const ContactsPage = () => {
         setName("")
         setPhone_number("")
         setMessage("")
-        setTimeout(() => {
-          setAfter(false)
-        }, 3000)
+        setLoad(false)
         notify()
       })
       .catch((err) => {
-        toast.error('Ошибка! Проверьте подключение к интернету')
+        setLoad(false)
+        console.log(err);
       })
+      .finally(() => {
+        setLoad(false)
+      })
+    // .catch((err) => {
+    //   toast.error('Ошибка! Проверьте подключение к интернету')
+    // }) boldi
+    // toastify chiqmayaptiyu qattan chiqiwi kere
+    // tepada moneybekka oxshab localhost 3000 da ochin!!
+    
   }
 
   const notify = () => toast.success('Success!', {
@@ -83,7 +94,7 @@ const ContactsPage = () => {
             </div>
             <div className="ContactsPageRight">
               <Navbar />
-              
+
               <div className="main-bg">
                 <img src="./img/wall1.png" alt="" />
               </div>
@@ -101,15 +112,30 @@ const ContactsPage = () => {
                       <label className='contact-label'>{getText("contactName")}<span>*</span></label>
                     </div>
                     <div className="position-relative wrap">
-                      <input onChange={e => setPhone_number(e.target.value)} value={phone_number} required name="phone_number" type="tel" className='form-control' placeholder=' ' id="tel" />
+                      <InputMask
+                        mask="+\9\9\8\ (99) 999-99-99"
+                        maskChar="_"
+                        onChange={e => setPhone_number(e.target.value)}
+                        value={phone_number}
+                        required
+                        name="phone_number"
+                        className='form-control'
+                        placeholder=' '
+                        id="tel"
+                      />
                       <label className='contact-label'>{getText("phoneNum")}<span>*</span></label>
                     </div>
                     <div className="position-relative wrap">
                       <textarea onChange={e => setMessage(e.target.value)} value={message} required name="message" className='form-control' placeholder=' ' id="message"></textarea>
                       <label className='contact-label'>{getText("contactMsg")}<span>*</span></label>
                     </div>
-                    <button type='submit' className="btn send-btn">
+                    {/* <button type='submit' className="btn send-btn">
                       {getText("send")}
+                    </button> */}
+                    <button disabled={load} type='submit'
+                      className="btn send-btn d-flex align-items-center">
+                      {getText("send")}
+                      {load ? <span style={{ color: '#fff' }} className='spinner-border-sm spinner-border ms-2'></span> : ''}
                     </button>
                     <ToastContainer />
                   </form>

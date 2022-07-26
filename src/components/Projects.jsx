@@ -18,7 +18,7 @@ const Projects = () => {
 
     return (
         <div className='Project-blog mt-md-5 mt-0'>
-            <div class="text-center"><h2 class="small-heading">{getText("portfolio")}</h2></div>
+            <div className="text-center"><h2 className="small-heading">{getText("portfolio")}</h2></div>
             <div className="projects row">
                 <div className="col-12">
 

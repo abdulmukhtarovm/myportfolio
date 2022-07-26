@@ -37,7 +37,7 @@ export const uz = {
     aboutP1: `Men Abdumuxtarov MuhammadUmar 2005 yil 16 sentyabrda Farg'onada tug'ilganman. 2012 yil Shayxontohur tumani 19-sonli Toshkent shahar o'rta ta'lim maktabiga o'qishga kirdim. 2023 yilda maktabni tugataman. 2019 yilda "Veb-dasturlash" kursida Proweb xususiy maktabida o'qishni boshladim. 2020 yilda imtiyozli diplom bilan yakunladim. 2020 yil aprel oyidan boshlab SMM menejerlikga qiziqib qoldim. Sentyabrgacha men ushbu kursda mustaqil ravishda o'qidim. Sentyabr oyidan boshlab PROWEB maktabida o'z kasbining professionaliga aylanish uchun SMM kurslariga borishni boshladim.`,
     dopinfo: "Qo'shimcha ma'lumotlar:",
     mominfo: "Onam: Saidova Umida Ibragimovna, 1987 yil 4 avgustda Farg'ona shahrida tug'ilgan. Toshkent shahrida yashaydi, boshqa ma'lumotlar berilmaydi.",
-    dadinfo: "Otam: Rustamov Rustambek Abdumuxtorovich, 1980 gurgula 18 noyabrda Farg'ona shahrida tug'ilgan, oliy ma'lumotli, tadbirkor bo'lib ishlaydi. U Toshkent shahrida yashaydi, boshqa ma'lumotlar berilmaydi.",
+    dadinfo: "Otam: Rustamov Rustambek Abdumuxtorovich, 1980 yil 18 noyabrda Farg'ona shahrida tug'ilgan, oliy ma'lumotli, tadbirkor bo'lib ishlaydi. U Toshkent shahrida yashaydi, boshqa ma'lumotlar berilmaydi.",
     broinfo: "Ukam: Abdulmuxtorov MuhammadAmin, 20 May 2008 yilda Farg'onada tug'ilgan. Toshkent shahrida yashaydi, boshqa ma'lumotlar berilmaydi.",
     downloadresume: "Rezyume yuklab olish",
     whatcanido: "Qo'limdan nima keladi?",

@@ -40,12 +40,13 @@ const ResumePage = () => {
                             </div>
                         </div>
                         <div className="ResumePageRight">
+                            <div className="main-bg">
+                                <img src="./img/wall1.png" alt="" />
+                            </div>
                             <Navbar />
                             <div className="education row justify-content-center">
 
-                                <div className="main-bg">
-                                    <img src="./img/wall1.png" alt="" />
-                                </div>
+
 
                                 <div className="text-center">
                                     <h2 className="small-heading">{getText('education')}</h2>
@@ -150,8 +151,8 @@ const ResumePage = () => {
                                     </div>
                                 </div>
                             </div>
-                          <div className="clearfix">
-               
+                            <div className="clearfix">
+
 
                                 <div className="text-center">
                                     <h2 className="small-heading">{getText("skills")}</h2>
